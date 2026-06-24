@@ -24,8 +24,8 @@ def contractor_info(contract_id):
 @app.route('/customer/<string:customer_name>')
 def customer_info(customer_name):
     if customer_name in customers:
-        headers = {}
-        return make_response(headers)
+        status_code = 204
+        return make_response("", status_code, "")
     else:
         status_code = 404
         return make_response("", status_code, "")
